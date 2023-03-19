@@ -1,0 +1,19 @@
+[
+  {
+    "id": "Depot Value",
+    "data": [
+      {"x": "January", "y": 0},
+      {"x": "February", "y": 100},
+      {"x": "March", "y": 200},
+      {"x": "April", "y": 300},
+      {"x": "May", "y": 400},
+      {"x": "June", "y": 500},
+      {"x": "July", "y": 600},
+      {"x": "August", "y": 700},
+      {"x": "September", "y": 800},
+      {"x": "October", "y": 900},
+      {"x": "November", "y": 1000},
+      {"x": "December", "y": 1100}
+    ]
+  }
+]
