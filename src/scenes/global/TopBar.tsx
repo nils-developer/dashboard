@@ -1,20 +1,23 @@
+import {Link} from "react-router-dom";
 
+
+const linkStyle: string = "justify-center text-center w-32 py-3 ease-in-out duration-300 hover:bg-emerald-300 hover:font-medium text-white"
 
 export const TopBar = () => {
     return (
-        <nav className="flex justify-end right-0 border-b px-5">
-            <div className="flex">
-                <span className="
-                flex justify-center ease-in-out duration-300 hover:bg-slate-100 hover:font-medium"
-                >
-                    <a className="py-5 w-32 text-center" href="/#">Settings</a>
-                </span>
-                <span className=
-                          "flex justify-center ease-in-out duration-300 hover:bg-slate-100 hover:font-medium"
-                >
-                    <a className="py-5 w-32 text-center" href="/#">Profile</a>
-                </span>
-            </div>
+        <nav className="flex justify-end right-0 border-b px-5 bg-emerald-500">
+            <Link
+                to="/settings"
+                className={linkStyle}
+            >
+                <span>Settings</span>
+            </Link>
+            <Link
+                to="/profile"
+                className={linkStyle}
+            >
+                <span>Profile</span>
+            </Link>
         </nav>
     )
 }

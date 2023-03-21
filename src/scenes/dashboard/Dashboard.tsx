@@ -1,60 +1,66 @@
 import React from "react";
-import {TopBar} from "../global/TopBar";
 import {Header} from "../../components/Header";
 import {DashboardSection} from "./DashboardSection";
 import {DashboardItem} from "./DashboardItem";
-import {LineChart} from "../linechart/LineChart";
+import {LineChart} from "../../components/LineChart";
+import {AddItemButton} from "./AddItemButton";
+
+const XLDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 mr-4 h-72 col-span-2"
+const MDDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 row-start-1 row-end-3"
+const SMDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4"
 
 export const Dashboard = () => {
     return (
-        <div className="w-full">
-            <TopBar/>
-            <div className="ml-5 mx-5">
+        <>
+            <div className="flex justify-between">
                 <Header
-                    className="text-5xl my-5"
                     title={"Dashboard"}
                 />
-                <DashboardSection className="grid gap-4 grid-cols-4">
-                    <DashboardItem
-                        className="border border-neutral-200 rounded p-4"
-                        title={"Total"}
-                        value={0.00}
-                    />
-                    <DashboardItem
-                        className="border border-neutral-200 rounded p-4"
-                        title={"Invest"}
-                        value={0.00}
-                    />
-                    <DashboardItem
-                        className="border border-neutral-200 rounded p-4"
-                        title={"Bank"}
-                        value={0.00}
-                    />
-                    <DashboardItem
-                        className="border border-neutral-200 rounded p-4"
-                        title={"Profit / Loss"}
-                        value={0.00}
-                    />
-                </DashboardSection>
-                <DashboardSection className="grid gap-4 grid-cols-3 grid-rows-2 grid-flow-col mt-10">
-                    <DashboardItem
-                        className="border border-neutral-200 rounded p-4 mr-4 h-72 col-span-2"
-                        title={"Depot Value"}
-                    >
-                        <LineChart/>
-                    </DashboardItem>
-                    <DashboardItem
-                        className="border border-neutral-200 rounded p-4 mr-4 h-72 col-span-2"
-                        title={"Dividend"}
-                    >
-                    </DashboardItem>
-                    <DashboardItem
-                        className="border border-neutral-200 rounded p-4 row-start-1 row-end-3"
-                        title={"Transactions"}
-                        value={0.00}
-                    />
-                </DashboardSection>
+                <div className="flex">
+                    <AddItemButton uri="/addStock" text="Add Stock"/>
+                    <AddItemButton uri="/addInvestment" text="Add Investment"/>
+                    <AddItemButton uri="/addBankItem" text="Add Bank"/>
+                </div>
             </div>
-        </div>
+            <DashboardSection className="grid gap-4 grid-cols-4">
+                <DashboardItem
+                    className={SMDashboardItemStyle}
+                    title={"Total"}
+                    value={0.00}
+                />
+                <DashboardItem
+                    className={SMDashboardItemStyle}
+                    title={"Invest"}
+                    value={0.00}
+                />
+                <DashboardItem
+                    className={SMDashboardItemStyle}
+                    title={"Bank"}
+                    value={0.00}
+                />
+                <DashboardItem
+                    className={SMDashboardItemStyle}
+                    title={"Profit / Loss"}
+                    value={0.00}
+                />
+            </DashboardSection>
+            <DashboardSection className="grid gap-4 grid-cols-3 grid-rows-2 grid-flow-col mt-10">
+                <DashboardItem
+                    className={XLDashboardItemStyle}
+                    title={"Depot Value"}
+                >
+                    <LineChart className="h-full"/>
+                </DashboardItem>
+                <DashboardItem
+                    className={XLDashboardItemStyle}
+                    title={"Dividend"}
+                >
+                </DashboardItem>
+                <DashboardItem
+                    className={MDDashboardItemStyle}
+                    title={"Transactions"}
+                />
+            </DashboardSection>
+        </>
     )
 }
