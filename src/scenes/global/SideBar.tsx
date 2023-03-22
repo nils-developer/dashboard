@@ -4,7 +4,7 @@ const linkStyle: string = "grow pl-5 py-3 ease-in-out duration-300 hover:pl-8 ho
 
 export const SideBar = () => {
     return (
-        <div className="flex flex-col w-52 border-r bg-emerald-500 text-white h-screen">
+        <div className="flex flex-col w-52 border-r border-emerald-600 bg-emerald-500 text-white h-screen">
             <h2 className="mx-auto my-3 text-2xl">NAVIGATION</h2>
             <div className="flex flex-col mt-10 text-lg">
                 <Link
@@ -15,6 +15,10 @@ export const SideBar = () => {
                     to="/line"
                     className={linkStyle}
                 >Depot Value</Link>
+                <Link
+                    to="/transactions"
+                    className={linkStyle}
+                >Transactions</Link>
             </div>
         </div>
     )
