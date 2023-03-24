@@ -3,7 +3,7 @@ import React from "react";
 type Props = {
     className: string
     title: string,
-    value?: number,
+    value?: Promise<any> | number | any,
     children?: React.ReactNode
 }
 export const DashboardItem = ({className, title, value, children}: Props) => {

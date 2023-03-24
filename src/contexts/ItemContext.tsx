@@ -1,24 +1,26 @@
-import React, {useState, useContext, Provider, ContextType} from "react";
-import * as string_decoder from "string_decoder";
+import React, {useState, useContext} from "react";
 
-type Props = {
-    children: React.ReactNode
+type Item = {
+        id: any,
+        value: any,
+        date: any
 }
 
-interface ItemsState {
-        id: string,
-        value: string,
-        date: string
+type StateItem = {
+    items: Item[],
+    setItems: React.Dispatch<React.SetStateAction<Item[]>>
 }
 
-const ItemContext = React.createContext([])
+const ItemContext = React.createContext<StateItem>({
+        items: [], setItems: () => {}
+    })
 
 export const useItems = () => {
-    return useContext(ItemContext)
+    return useContext<StateItem>(ItemContext)
 }
 
-const ItemProvider = ({children}: Props) => {
-    const [items, setItems] = useState<ItemsState[]>([])
+const ItemProvider = ({children}: {children: React.ReactNode}) => {
+    const [items, setItems] = useState<Item[]>([])
 
     return (
         <ItemContext.Provider value={{items, setItems}}>

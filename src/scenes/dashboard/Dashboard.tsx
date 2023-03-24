@@ -1,16 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Header} from "../../components/Header";
 import {DashboardSection} from "./DashboardSection";
 import {DashboardItem} from "./DashboardItem";
 import {LineChart} from "../../components/LineChart";
 import {AddItemButton} from "./AddItemButton";
 import {Transactions} from "../transactions/Transactions";
+import {fetchTotalBankValue} from "./data/fetchData";
 
 const XLDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 mr-4 h-72 col-span-2"
 const MDDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 row-start-1 row-end-3"
 const SMDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4"
 
 export const Dashboard = () => {
+    const [totalBankValue, setTotalBankValue] = useState<number>(0)
+
+    useEffect(() => {
+        fetchTotalBankValue(setTotalBankValue)
+    }, [])
+
     return (
         <>
             <div className="flex justify-between">
@@ -37,7 +44,7 @@ export const Dashboard = () => {
                 <DashboardItem
                     className={SMDashboardItemStyle}
                     title={"Bank"}
-                    value={0.00}
+                    value={totalBankValue}
                 />
                 <DashboardItem
                     className={SMDashboardItemStyle}
