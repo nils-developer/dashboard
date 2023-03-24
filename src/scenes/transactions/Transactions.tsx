@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
 import {useItems} from "../../contexts/ItemContext";
 
 type Props = {
@@ -26,13 +26,13 @@ export const Transactions = ({isButtonSet = true}: Props) => {
     }
 
     const fetchTodos = async () => {
-        let response: any = await axios.get("http://localhost:8080/bank/fetchAll")
+        let response: AxiosResponse | void = await axios.get("http://localhost:8080/bank/fetchAll")
             .catch(
                 error => console.log(error)
             )
 
         setItems(
-            response.data.reverse()
+            response?.data.reverse()
         )
     }
 
