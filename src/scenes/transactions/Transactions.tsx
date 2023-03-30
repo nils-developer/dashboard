@@ -1,15 +1,17 @@
 import {useEffect} from "react";
-import axios, {AxiosResponse} from "axios";
 import {useItems} from "../../contexts/ItemContext";
+import {fetchAllDataFromTransactions} from "./fetchData";
 
 type Props = {
     isButtonSet?: boolean
 }
 
 type Items = {
-    id: number,
-    value: number,
-    date: number
+    transactionId: number,
+    transactionType: string,
+    amount: number,
+    date: string,
+    userId: number
 }
 
 const tdStyle: string = "flex justify-center align-middle border-t border-emerald-600 w-full py-4";
@@ -21,23 +23,13 @@ export const Transactions = ({isButtonSet = true}: Props) => {
     const {items, setItems} = useItems()
 
 
-    const formatDate = (date: number) => {
+    const formatDate = (date: string): string => {
         return new Date(date).toISOString().slice(0, 10)
     }
 
-    const fetchTodos = async () => {
-        let response: AxiosResponse | void = await axios.get("http://localhost:8080/bank/fetchAll")
-            .catch(
-                error => console.log(error)
-            )
-
-        setItems(
-            response?.data.reverse()
-        )
-    }
-
     useEffect(() => {
-        fetchTodos()
+        fetchAllDataFromTransactions(setItems)
+        // fetchTodos()
     })
 
     return (
@@ -51,13 +43,13 @@ export const Transactions = ({isButtonSet = true}: Props) => {
             {
                 items.map((item: Items) => (
                 <div
-                    key={item.id}
+                    key={item.transactionId}
                     className={isButtonSet ? "grid grid-cols-5" : reduceGrid}
                 >
-                    <p className={tdStyle}>{item.id}</p>
-                    <p className={tdStyle}>{Number(item.value).toFixed(2)} €</p>
+                    <p className={tdStyle}>{item.transactionId}</p>
+                    <p className={tdStyle}>{Number(item.amount).toFixed(2)} €</p>
                     <p className={tdStyle}>{formatDate(item.date)}</p>
-                    <p className={tdStyle}>B</p>
+                    <p className={tdStyle}>{item.transactionType}</p>
                     <div className={isButtonSet ? "flex justify-center border-t border-emerald-600" : hideButton}>
                         <button
                             type="submit"

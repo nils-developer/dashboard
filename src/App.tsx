@@ -5,7 +5,7 @@ import {TopBar} from "./scenes/global/TopBar";
 import {Dashboard} from "./scenes/dashboard/Dashboard";
 import {Depot} from "./scenes/depot/Depot";
 import {SideBar} from "./scenes/global/SideBar";
-import {AddBankItem} from "./scenes/bank/AddBankItem";
+import {AddBalance} from "./scenes/balance/AddBalance";
 import {Transactions} from "./scenes/transactions/Transactions";
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
                         <Routes>
                             <Route path="/" element={<Dashboard/>}/>
                             <Route path="/line" element={<Depot/>}/>
-                            <Route path="/addBankItem" element={<AddBankItem itemType="bank"/>}/>
+                            <Route path="/addBankItem" element={<AddBalance itemType="balance"/>}/>
                             <Route path="/transactions" element={<Transactions/>}/>
                         </Routes>
                     </div>

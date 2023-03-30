@@ -1,9 +1,11 @@
 import React, {useState, useContext} from "react";
 
 type Item = {
-        id: any,
-        value: any,
-        date: any
+    transactionId: number,
+    transactionType: string,
+    amount: number,
+    date: string,
+    userId: number
 }
 
 type StateItem = {
