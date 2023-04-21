@@ -16,6 +16,6 @@ export const fetchAllDataFromTransactions = async (setStateAction: (value: (((pr
         )
 
     setStateAction(
-        response?.data as unknown as SetStateAction<any>
+        response?.data.reverse() as unknown as SetStateAction<any>
     )
 }

@@ -20,9 +20,6 @@ export const AddBalance = ({itemType}: Props) => {
             date: currentDate
         }
 
-        console.log(balanceItem.balance)
-        console.log(balanceItem.date)
-
         axios.patch(
             "http://localhost:8080/balance/increase/1",
             balanceItem

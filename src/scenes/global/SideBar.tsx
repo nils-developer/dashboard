@@ -19,6 +19,10 @@ export const SideBar = () => {
                     to="/transactions"
                     className={linkStyle}
                 >Transactions</Link>
+                <Link
+                    to="/stock"
+                    className={linkStyle}
+                >Stock</Link>
             </div>
         </div>
     )
