@@ -19,8 +19,6 @@ export const Stock = () => {
             stockDate: currentDate
         }
 
-        console.log(stockItem)
-
         axios.post(
             "http://localhost:8080/stock/create",
             stockItem

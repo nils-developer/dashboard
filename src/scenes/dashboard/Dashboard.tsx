@@ -25,7 +25,7 @@ export const Dashboard = () => {
                     title={"Dashboard"}
                 />
                 <div className="flex">
-                    <AddItemButton uri="/addStock" text="Add Stock"/>
+                    <AddItemButton uri="/stock" text="Add Stock"/>
                     <AddItemButton uri="/addInvestment" text="Add Investment"/>
                     <AddItemButton uri="/addBankItem" text="Add Bank"/>
                 </div>

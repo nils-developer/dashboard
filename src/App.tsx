@@ -8,6 +8,7 @@ import {SideBar} from "./scenes/global/SideBar";
 import {AddBalance} from "./scenes/balance/AddBalance";
 import {Transactions} from "./scenes/transactions/Transactions";
 import {Stock} from "./scenes/stock/Stock";
+import {Investments} from "./scenes/investments/Investments";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                             <Route path="/" element={<Dashboard/>}/>
                             <Route path="/line" element={<Depot/>}/>
                             <Route path="/addBankItem" element={<AddBalance itemType="balance"/>}/>
+                            <Route path="/addInvestment" element={<Investments/>}/>
                             <Route path="/transactions" element={<Transactions/>}/>
                             <Route path="/stock" element={<Stock/>}/>
                         </Routes>
