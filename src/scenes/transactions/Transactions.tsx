@@ -71,7 +71,7 @@ export const Transactions = ({isButtonSet = true}: Props) => {
                 <h3 className="flex justify-center border-l border-emerald-600">Type</h3>
             </div>
             {
-                items.map((item: Items) => (
+                items?.map((item: Items) => (
                 <div
                     key={item.transactionId}
                     className={isButtonSet ? "grid grid-cols-5" : reduceGrid}

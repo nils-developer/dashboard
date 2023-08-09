@@ -21,9 +21,6 @@ export const SideBar = () => {
                     to="/transactions"
                     className={linkStyle}
                 >Transactions</Link>
-                <DropdownMenu
-                    className={linkStyle + " " + dropDownStyle}
-                />
                 <Link
                     to="/stock"
                     className={linkStyle}
