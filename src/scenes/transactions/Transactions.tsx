@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {useItems} from "../../contexts/ItemContext";
-import {fetchAllDataFromTransactions} from "./fetchData";
+import {fetchAllDataFromTransactions} from "./fetchTransactionObject";
 import axios from "axios";
 
 type Props = {
