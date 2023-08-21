@@ -1,18 +1,12 @@
 import React, {useEffect} from "react";
 import {useItems} from "../../contexts/ItemContext";
-import {fetchAllDataFromTransactions} from "./fetchTransactionObject";
+import {fetchAllDataFromTransactions} from "../../data/fetchTransactionObject";
 import axios from "axios";
+import {Item} from "../../helper/types";
+import {formatDate} from "../../helper/functions";
 
 type Props = {
     isButtonSet?: boolean
-}
-
-type Items = {
-    transactionId: number,
-    transactionType: string,
-    amount: number,
-    date: string,
-    userId: number
 }
 
 const tdStyle: string = "flex justify-center align-middle border-t border-emerald-600 w-full py-4";
@@ -22,11 +16,6 @@ const reduceGrid: string = "grid grid-cols-4 font-medium";
 
 export const Transactions = ({isButtonSet = true}: Props) => {
     const {items, setItems} = useItems()
-
-
-    const formatDate = (date: string): string => {
-        return new Date(date).toISOString().slice(0, 10)
-    }
 
     const removeItem = async(
         event: React.FormEvent<HTMLFormElement>,
@@ -71,7 +60,7 @@ export const Transactions = ({isButtonSet = true}: Props) => {
                 <h3 className="flex justify-center border-l border-emerald-600">Type</h3>
             </div>
             {
-                items?.map((item: Items) => (
+                items?.map((item: Item) => (
                 <div
                     key={item.transactionId}
                     className={isButtonSet ? "grid grid-cols-5" : reduceGrid}

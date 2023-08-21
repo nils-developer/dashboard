@@ -1,31 +1,44 @@
 import {ResponsiveLine} from '@nivo/line';
+import {fetchAllDataFromTransactions} from "../../data/fetchTransactionObject";
+import {useItems} from "../../contexts/ItemContext";
+import {useEffect} from "react";
 
 type Props = {
     className?: string
 }
 
-const data = [
+export const ValueChart = ({className}: Props) => {
+    const {items, setItems} = useItems()
+
+    items.reverse()
+
+
+
+    useEffect(() => {
+        fetchAllDataFromTransactions(setItems)
+    })
+
+    const data = [
         {
             "id": "Depot Value",
             "color": "hsl(266, 70%, 60%)",
             "data": [
-                {"x": "January", "y": 0},
-                {"x": "February", "y": 100},
-                {"x": "March", "y": 200},
-                {"x": "April", "y": 300},
-                {"x": "May", "y": 400},
-                {"x": "June", "y": 500},
-                {"x": "July", "y": 600},
-                {"x": "August", "y": 700},
-                {"x": "September", "y": 800},
-                {"x": "October", "y": 900},
-                {"x": "November", "y": 1000},
-                {"x": "December", "y": 1100}
+                {"x": "January", "y": items[11]?.amount ?? 0},
+                {"x": "February", "y": items[10]?.amount ?? 0},
+                {"x": "March", "y": items[9]?.amount ?? 0},
+                {"x": "April", "y": items[8]?.amount ?? 0},
+                {"x": "May", "y": items[7]?.amount ?? 0},
+                {"x": "June", "y": items[6]?.amount ?? 0},
+                {"x": "July", "y": items[5]?.amount ?? 0},
+                {"x": "August", "y": items[4]?.amount ?? 0},
+                {"x": "September", "y": items[3]?.amount ?? 0},
+                {"x": "October", "y": items[2]?.amount ?? 0},
+                {"x": "November", "y": items[1]?.amount ?? 0},
+                {"x": "December", "y": items[0]?.amount ?? 0}
             ]
         }
     ]
 
-export const LineChart = ({className}: Props) => {
     return (
         <div className={className}>
             <ResponsiveLine

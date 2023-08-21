@@ -1,12 +1,5 @@
 import React, {useState, useContext} from "react";
-
-type Item = {
-    transactionId: number,
-    transactionType: string,
-    amount: number,
-    date: string,
-    userId: number
-}
+import {Item} from "../helper/types";
 
 type StateItem = {
     items: Item[],

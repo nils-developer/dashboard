@@ -2,10 +2,10 @@ import React, {useEffect, useState} from "react";
 import {Header} from "../../components/Header";
 import {DashboardSection} from "./DashboardSection";
 import {DashboardItem} from "./DashboardItem";
-import {LineChart} from "../../components/LineChart";
+import {ValueChart} from "../depot/ValueChart";
 import {AddItemButton} from "./AddItemButton";
 import {Transactions} from "../transactions/Transactions";
-import {fetchBalanceFromUser} from "./fetchBalanceArray";
+import {fetchBalanceFromUser} from "../../data/fetchBalanceArray";
 
 const XLDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 mr-4 h-72 col-span-2"
 const MDDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 row-start-1 row-end-3"
@@ -57,7 +57,7 @@ export const Dashboard = () => {
                     className={XLDashboardItemStyle}
                     title={"Depot Value"}
                 >
-                    <LineChart className="h-full"/>
+                    <ValueChart className="h-full"/>
                 </DashboardItem>
                 <DashboardItem
                     className={XLDashboardItemStyle}
