@@ -7,12 +7,16 @@ type Props = {
     className?: string
 }
 
+const dataArray = [
+    {
+
+    }
+]
+
 export const ValueChart = ({className}: Props) => {
     const {items, setItems} = useItems()
 
-    items.reverse()
-
-
+    items?.reverse()
 
     useEffect(() => {
         fetchAllDataFromTransactions(setItems)
