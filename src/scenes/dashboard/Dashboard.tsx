@@ -6,6 +6,8 @@ import {ValueChart} from "../depot/ValueChart";
 import {AddItemButton} from "./AddItemButton";
 import {Transactions} from "../transactions/Transactions";
 import {fetchBalanceFromUser} from "../../data/fetchBalanceArray";
+import {fetchTotalAmountFromUser} from "../../data/fetchTotalAmount";
+import {fetchInvestmentAmountFromUser} from "../../data/fetchInvestmentAmount";
 
 const XLDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 mr-4 h-72 col-span-2"
 const MDDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 row-start-1 row-end-3"
@@ -13,9 +15,13 @@ const SMDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-e
 
 export const Dashboard = () => {
     const [totalBankValue, setTotalBankValue] = useState<number>(0)
+    const [totalAmount, setTotalAmount] = useState<number>(0)
+    const [totalInvest, setTotalInvest] = useState<number>(0)
 
     useEffect(() => {
         fetchBalanceFromUser(setTotalBankValue)
+        fetchTotalAmountFromUser(setTotalAmount)
+        fetchInvestmentAmountFromUser(setTotalInvest)
     }, [])
 
     return (
@@ -34,12 +40,12 @@ export const Dashboard = () => {
                 <DashboardItem
                     className={SMDashboardItemStyle}
                     title={"Total"}
-                    value={0.00}
+                    value={isNaN(totalAmount) ? 0.00 : totalAmount}
                 />
                 <DashboardItem
                     className={SMDashboardItemStyle}
                     title={"Invest"}
-                    value={0.00}
+                    value={isNaN(totalInvest) ? 0.00 : totalInvest}
                 />
                 <DashboardItem
                     className={SMDashboardItemStyle}

@@ -20,7 +20,7 @@ export const ValueChart = ({className}: Props) => {
 
     useEffect(() => {
         fetchAllDataFromTransactions(setItems)
-    })
+    }, [setItems])
 
     const data = [
         {
