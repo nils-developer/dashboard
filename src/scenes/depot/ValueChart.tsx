@@ -27,18 +27,18 @@ export const ValueChart = ({className}: Props) => {
             "id": "Depot Value",
             "color": "hsl(266, 70%, 60%)",
             "data": [
-                {"x": "January", "y": items[11]?.amount ?? 0},
-                {"x": "February", "y": items[10]?.amount ?? 0},
-                {"x": "March", "y": items[9]?.amount ?? 0},
-                {"x": "April", "y": items[8]?.amount ?? 0},
-                {"x": "May", "y": items[7]?.amount ?? 0},
-                {"x": "June", "y": items[6]?.amount ?? 0},
-                {"x": "July", "y": items[5]?.amount ?? 0},
-                {"x": "August", "y": items[4]?.amount ?? 0},
-                {"x": "September", "y": items[3]?.amount ?? 0},
-                {"x": "October", "y": items[2]?.amount ?? 0},
-                {"x": "November", "y": items[1]?.amount ?? 0},
-                {"x": "December", "y": items[0]?.amount ?? 0}
+                {"x": "January", "y": items[11]?.amount.toFixed(2) ?? 0},
+                {"x": "February", "y": items[10]?.amount.toFixed(2) ?? 0},
+                {"x": "March", "y": items[9]?.amount.toFixed(2) ?? 0},
+                {"x": "April", "y": items[8]?.amount.toFixed(2) ?? 0},
+                {"x": "May", "y": items[7]?.amount.toFixed(2) ?? 0},
+                {"x": "June", "y": items[6]?.amount.toFixed(2) ?? 0},
+                {"x": "July", "y": items[5]?.amount.toFixed(2) ?? 0},
+                {"x": "August", "y": items[4]?.amount.toFixed(2) ?? 0},
+                {"x": "September", "y": items[3]?.amount.toFixed(2) ?? 0},
+                {"x": "October", "y": items[2]?.amount.toFixed(2) ?? 0},
+                {"x": "November", "y": items[1]?.amount.toFixed(2) ?? 0},
+                {"x": "December", "y": items[0]?.amount.toFixed(2) ?? 0}
             ]
         }
     ]

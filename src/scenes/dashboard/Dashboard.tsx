@@ -40,22 +40,22 @@ export const Dashboard = () => {
                 <DashboardItem
                     className={SMDashboardItemStyle}
                     title={"Total"}
-                    value={isNaN(totalAmount) ? 0.00 : totalAmount}
+                    value={isNaN(totalAmount) ? 0.00 : totalAmount.toFixed(2)}
                 />
                 <DashboardItem
                     className={SMDashboardItemStyle}
                     title={"Invest"}
-                    value={isNaN(totalInvest) ? 0.00 : totalInvest}
+                    value={isNaN(totalInvest) ? 0.00 : totalInvest.toFixed(2)}
                 />
                 <DashboardItem
                     className={SMDashboardItemStyle}
                     title={"Bank"}
-                    value={isNaN(totalBankValue) ? 0.00 : totalBankValue}
+                    value={isNaN(totalBankValue) ? 0.00 : totalBankValue.toFixed(2)}
                 />
                 <DashboardItem
                     className={SMDashboardItemStyle}
                     title={"Profit / Loss"}
-                    value={0.00}
+                    value={(0.00).toFixed(2)}
                 />
             </DashboardSection>
             <DashboardSection className="grid gap-4 grid-cols-3 grid-rows-2 grid-flow-col mt-10">
