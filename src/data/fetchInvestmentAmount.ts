@@ -1,13 +1,18 @@
 import {SetStateAction} from "react";
 import axios, {AxiosResponse} from "axios";
 
-export const fetchInvestmentAmountFromUser = async (setStateAction: (value: SetStateAction<number>) => void) => {
-    let response: AxiosResponse<number> | void = await axios.get<number>("http://localhost:8080/transaction/fetchInvest")
-        .catch(
-            error => console.error(error)
+export const fetchInvestmentAmountFromUser = async (
+    setStateAction: (value: SetStateAction<number>) => void
+) => {
+    try {
+        const response: AxiosResponse<number> = await axios.get(
+            "http://localhost:8080/transaction/fetchInvest"
         )
 
-    setStateAction(
-        Number(response?.data).toFixed(2) as unknown as SetStateAction<number>
-    )
+        setStateAction(
+            Number(response?.data)
+        )
+    } catch (error) {
+        console.error(error)
+    }
 }
