@@ -5,3 +5,8 @@ export type Item = {
     date: string,
     userId: number
 }
+
+export type MonthlyAmount = {
+    date: Date,
+    amount: number
+}
