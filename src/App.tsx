@@ -13,11 +13,11 @@ import {Investments} from "./scenes/investments/Investments";
 const App = () => {
     return (
         <ItemProvider>
-            <div className="flex font-light h-screen bg-gray-200">
+            <div className="flex font-light h-screen bg-emerald-100">
                 <SideBar/>
                 <div className="flex grow flex-col">
                 <TopBar/>
-                    <div className="px-4">
+                    <div className="px-4 border-black rounded-xl">
                         <Routes>
                             <Route path="/" element={<Dashboard/>}/>
                             <Route path="/line" element={<Depot/>}/>

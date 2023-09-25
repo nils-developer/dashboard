@@ -5,7 +5,13 @@ const linkStyle: string = "justify-center text-center w-32 py-3 ease-in-out dura
 
 export const TopBar = () => {
     return (
-        <nav className="flex justify-end right-0 border-b border-emerald-600 px-5 bg-emerald-500">
+        <nav className="
+            flex justify-end
+            my-3 mx-3 right-0 px-5
+            shadow-lg shadow-gray-300
+            border rounded-full border-emerald-600
+            bg-emerald-500
+        ">
             <Link
                 to="/settings"
                 className={linkStyle}
