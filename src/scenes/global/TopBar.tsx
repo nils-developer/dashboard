@@ -9,7 +9,7 @@ export const TopBar = () => {
             flex justify-end
             my-3 mx-3 right-0 px-5
             shadow-lg shadow-gray-300
-            border rounded-full border-emerald-600
+            rounded-lg
             bg-emerald-500
         ">
             <Link

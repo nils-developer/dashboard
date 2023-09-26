@@ -10,7 +10,7 @@ import {fetchTotalAmountFromUser} from "../../data/fetchTotalAmount";
 import {fetchInvestmentAmountFromUser} from "../../data/fetchInvestmentAmount";
 
 const XLDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 mr-4 h-72 col-span-2"
-const MDDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 row-start-1 row-end-3"
+const MDDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 row-start-1 row-end-3" //row-end-3 is responsible that only 7 elements are displayed
 const SMDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4"
 
 export const Dashboard = () => {

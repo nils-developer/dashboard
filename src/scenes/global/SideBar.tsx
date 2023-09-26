@@ -9,7 +9,7 @@ export const SideBar = () => {
             w-52 my-3 mx-3
             text-white
             shadow-lg shadow-gray-300
-            border-r border-emerald-600 rounded-xl
+            rounded-xl
             bg-emerald-500
         ">
             <h2 className="mx-auto my-3 text-2xl">NAVIGATION</h2>

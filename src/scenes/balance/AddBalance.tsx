@@ -55,7 +55,7 @@ export const AddBalance = ({itemType}: Props) => {
                 <div className="flex flex-col gap-3 w-2/6">
                     <label className="font-medium">New Income</label>
                     <input ref={refBankValue} className="border border-emerald-600 rounded-md" type="text"/>
-                    <div className="text-white">
+                    <div>
                         <Button type="submit" text="Submit"/>
                     </div>
                 </div>

@@ -27,8 +27,6 @@ export const Transactions = ({isButtonSet = true}: Props) => {
         const transactionId = parseInt(parentDiv?.firstElementChild?.textContent || "0", 10)
         const deleteItem = items.find(item => item.transactionId === transactionId)
 
-        console.log(deleteItem?.userId);
-
         await axios.delete(
             `http://localhost:8080/transaction/delete/${deleteItem?.transactionId}`
         ).catch(

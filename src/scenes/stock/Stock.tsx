@@ -40,7 +40,7 @@ export const Stock = () => {
                     <input ref={refStockName} className="border border-emerald-600 rounded-md" type="text"/>
                     <label className="font-medium">Price:</label>
                     <input ref={refStockPrice} className="border border-emerald-600 rounded-md" type="text"/>
-                    <div className="text-white">
+                    <div>
                         <Button type="submit" text="Submit"/>
                     </div>
                 </div>
