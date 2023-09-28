@@ -9,8 +9,8 @@ import {fetchBalanceFromUser} from "../../data/fetchBalanceArray";
 import {fetchTotalAmountFromUser} from "../../data/fetchTotalAmount";
 import {fetchInvestmentAmountFromUser} from "../../data/fetchInvestmentAmount";
 
-const XLDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 mr-4 h-72 col-span-2"
-const MDDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 row-start-1 row-end-3" //row-end-3 is responsible that only 7 elements are displayed
+const XLDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 mr-4 h-72 col-span-2 row-span-1"
+const MDDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4 overflow-auto row-span-3"
 const SMDashboardItemStyle: string = "bg-gray-100 drop-shadow-xl border border-emerald-600 rounded p-4"
 
 export const Dashboard = () => {
@@ -58,7 +58,7 @@ export const Dashboard = () => {
                     value={(0.00).toFixed(2)}
                 />
             </DashboardSection>
-            <DashboardSection className="grid gap-4 grid-cols-3 grid-rows-2 grid-flow-col mt-10">
+            <DashboardSection className="grid gap-4 grid-cols-3 grid-rows-3 grid-flow-col mt-10">
                 <DashboardItem
                     className={XLDashboardItemStyle}
                     title={"Depot Value"}
@@ -72,6 +72,9 @@ export const Dashboard = () => {
                 </DashboardItem>
                 <DashboardItem
                     className={MDDashboardItemStyle}
+                    specialStyle={{
+                        height: "66.15%"
+                    }}
                     title={"Transactions"}
                 >
                     <Transactions isButtonSet={false}/>

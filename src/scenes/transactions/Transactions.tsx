@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {DetailedHTMLProps, HTMLAttributes, useEffect} from "react";
 import {useItems} from "../../contexts/ItemContext";
 import {fetchAllDataFromTransactions} from "../../data/fetchTransactionObject";
 import axios from "axios";
@@ -13,6 +13,7 @@ const tdStyle: string = "flex justify-center align-middle border-t border-emeral
 const buttonStyle: string = "rounded-md my-2 px-3 py-2 bg-emerald-400 text-white text-sm hover:bg-emerald-200 hover:font-medium";
 const hideButton: string = "hidden";
 const reduceGrid: string = "grid grid-cols-4 font-medium";
+
 
 export const Transactions = ({isButtonSet = true}: Props) => {
     const {items, setItems} = useItems()
@@ -49,7 +50,7 @@ export const Transactions = ({isButtonSet = true}: Props) => {
     
     return (
         <div className={
-            isButtonSet ? "bg-gray-100 rounded-md overflow-hidden" : "bg-gray-100 rounded-md h-96 overflow-hidden"
+            isButtonSet ? "bg-gray-100 rounded-md overflow-hidden" : "bg-gray-100 rounded-md overflow-hidden"
         }>
             <div className={isButtonSet ? "grid grid-cols-5 font-medium py-5 mt-5" : reduceGrid + " py-5"}>
                 <h3 className="flex justify-center border-r border-emerald-600">Id</h3>

@@ -13,7 +13,7 @@ import {Investments} from "./scenes/investments/Investments";
 const App = () => {
     return (
         <ItemProvider>
-            <div className="flex font-light h-screen bg-emerald-100">
+            <div className="flex font-light h-screen overflow-hidden bg-emerald-100">
                 <SideBar/>
                 <div className="flex grow flex-col">
                 <TopBar/>
