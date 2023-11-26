@@ -3,7 +3,7 @@ import {Header} from "../../components/Header";
 import {DashboardSection} from "./DashboardSection";
 import {DashboardItem} from "./DashboardItem";
 import {ValueChart} from "../depot/ValueChart";
-import {AddItemButton} from "./AddItemButton";
+import {AddItemButton} from "../../components/AddItemButton";
 import {Transactions} from "../transactions/Transactions";
 import {fetchBalanceFromUser} from "../../data/fetchBalanceArray";
 import {fetchTotalAmountFromUser} from "../../data/fetchTotalAmount";
